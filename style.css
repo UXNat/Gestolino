@@ -16,18 +16,20 @@ html, body {
 
 /* === Kamera-Viewport (16:9, 90% Breite) === */
 #cameraContainer {
-    width: 90vw;            /* ➜ nimmt 90% der Bildschirmbreite */
-    max-width: 1500px;      /* optional, verhindert extremes Aufblähen */
-
-    aspect-ratio: 4 / 3;   /* ➜ Höhe automatisch proportional */
 
     position: absolute;
-    overflow: hidden;
+    width: 1000px;  /* gewünschte Breite */
+    height: 1000px; /* gleiche Höhe = Quadrat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(255, 255, 255); /* optional, nur zur Kontrolle */
+
 
     border-radius: 12px;
     background: #00000022;  /* leichtes Grau zum Testen, kannst du löschen */
 
-    margin-top: 25%;
+    margin-top: 30%;
 }
 
 
@@ -37,7 +39,7 @@ html, body {
     z-index: 2000;        /* höher als alles andere (999) */
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* kein Verzerren */
+    object-fit: cover;  /* kein Verzerren */
 }
 
 /* === Canvas für Zeichnungen über dem Video === */
