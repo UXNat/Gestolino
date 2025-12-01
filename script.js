@@ -175,14 +175,18 @@ function Gut(hand) {
 
      // Daumen nach oben
     const thumbUp = hand[4].y < hand[3].y && hand[4].y < hand[2].y;
+    const thumbHigh = hand[4].y < hand[8].y
+    const thumbHigh2 = hand[4].y < hand[12].y
+    const thumbHigh3 = hand[4].y < hand[16].y
+    const thumbHigh4 = hand[4].y < hand[20].y
 
     // Zeigefinger tip höher als PIP/MCP, rest Finger unten
-    const indexDown = hand[8].y > hand[6].y;
-    const middleDown = hand[12].y > hand[10].y;
-    const ringDown = hand[16].y > hand[14].y;
-    const pinkyDown = hand[20].y > hand[18].y;
+    const indexDown = hand[4].y < hand[6].y;
+    const middleDown = hand[4].y < hand[10].y;
+    const ringDown = hand[4].y < hand[14].y;
+    const pinkyDown = hand[4].y < hand[18].y;
 
-    return thumbUp && indexDown && middleDown && ringDown && pinkyDown;
+    return thumbUp && thumbHigh && thumbHigh2 && thumbHigh3 && thumbHigh4 && indexDown && middleDown && ringDown && pinkyDown;
 }
 
 
