@@ -180,7 +180,7 @@ function Gut(hand) {
     const thumbHigh3 = hand[4].y < hand[16].y
     const thumbHigh4 = hand[4].y < hand[20].y
 
-    // Zeigefinger tip höher als PIP/MCP, rest Finger unten
+    
     const indexDown = hand[4].y < hand[6].y;
     const middleDown = hand[4].y < hand[10].y;
     const ringDown = hand[4].y < hand[14].y;
@@ -612,6 +612,190 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage1_from2").addEventListener("click", () => showPage("page1"));
     document.getElementById("gotoPage2_from3").addEventListener("click", () => showPage("page2"));
     document.getElementById("gotoPage3_from4").addEventListener("click", () => showPage("page3"));
+
+
+
+
+
+    //icons navigation
+        //ICON 1: HAUS STARTPAGES
+    document.getElementById("gotoPage1_from2_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from3_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from4_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from5_ICON").addEventListener("click", () => showPage("page1"));
+    
+    document.getElementById("gotoPage1_from7_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from8_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from9_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from10_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from11_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from12_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from13_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from14_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from15_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from16_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from17_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from18_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from19_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from20_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from21_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from22_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from23_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from24_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from25_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from26_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from27_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from28_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from29_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from30_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from31_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from32_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from33_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from34_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from35_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from36_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from37_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from38_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from39_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from40_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from41_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage1_from42_ICON").addEventListener("click", () => showPage("page1"));
+   
+        //ICON 2 "HUT" FACTS
+    document.getElementById("gotoPage3_from1_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from2_ICON").addEventListener("click", () => showPage("page3"));
+    
+    document.getElementById("gotoPage3_from4_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from5_ICON").addEventListener("click", () => showPage("page3"));
+    
+    document.getElementById("gotoPage3_from7_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from8_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from9_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from10_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from11_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from12_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from13_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from14_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from15_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from16_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from17_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from18_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from19_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from20_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from21_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from22_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from23_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from24_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from25_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from26_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from27_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from28_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from29_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from30_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from31_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from32_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from33_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from34_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from35_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from36_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from37_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from38_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from39_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from40_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from41_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage3_from42_ICON").addEventListener("click", () => showPage("page3"));
+   
+        //ICON 3 NOTIZ KAPITEL
+    document.getElementById("gotoPage5_from1_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from2_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from3_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from4_ICON").addEventListener("click", () => showPage("page5"));
+    
+    
+    document.getElementById("gotoPage5_from7_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from8_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from9_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from10_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from11_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from12_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from13_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from14_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from15_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from16_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from17_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from18_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from19_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from20_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from21_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from22_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from23_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from24_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from25_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from26_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from27_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from28_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from29_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from30_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from31_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from32_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from33_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from34_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from35_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from36_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from37_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from38_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from39_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from40_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from41_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from42_ICON").addEventListener("click", () => showPage("page5"));
+
+
+
+        //ICON 4 "HAND" ENDSCREEN
+    document.getElementById("gotoPage42_from1_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from2_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from3_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from4_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from5_ICON").addEventListener("click", () => showPage("page42"));
+    
+    document.getElementById("gotoPage42_from7_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from8_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from9_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from10_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from11_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from12_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from13_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from14_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from15_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from16_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from17_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from18_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from19_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from20_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from21_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from22_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from23_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from24_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from25_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from26_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from27_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from28_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from29_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from30_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from31_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from32_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from33_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from34_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from35_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from36_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from37_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from38_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from39_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from40_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage42_from41_ICON").addEventListener("click", () => showPage("page42"));
+
+     
+    
 
 });
 
