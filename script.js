@@ -13,6 +13,8 @@ const hands = new Hands({
   locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
 });
 
+const DankeState = { active: false, startZ: 0, time: 0 };
+
 hands.setOptions({
   maxNumHands: 2,
   modelComplexity: 1,
@@ -32,6 +34,76 @@ let abendRightHistory = [];
 const MAX_ABEND_HISTORY = 20; 
 
 
+let handSequence = []; // speichert {pose, time}
+const sequenceTimeLimit = 1500; // 1,5 Sekunden
+
+
+
+// === Kreis-Historie für beide Zeigefinger ===
+let circleLeft = { prevX: null, prevY: null, dirX: 0, dirY: 0, changes: 0, time: 0 };
+let circleRight = { prevX: null, prevY: null, dirX: 0, dirY: 0, changes: 0, time: 0 };
+
+// === Output Lock System ===
+
+let outputTimer = null;
+let lastOutput = "Nichts erkannt"; // letzter Wert
+
+// === Globale Variablen für Danke-Geste ===
+let dankeFingerStateLeft  = { inProgress: false, time: 0 };
+let dankeFingerStateRight = { inProgress: false, time: 0 };
+
+let gutStateLeft  = { inProgress: false, wentUp: false, startY: null, time: 0 };
+let gutStateRight = { inProgress: false, wentUp: false, startY: null, time: 0 };
+
+
+
+
+let bitteMove = {
+    leftCount: 0,
+    rightCount: 0,
+    timeout: null
+};
+
+const BitteClapState = { active: false, claps: 0, wasClose: false, lastDist: 0, startTime: 0 };
+const DankeStateLeft = { active: false, startZ: 0, time: 0 };
+const DankeStateRight = { active: false, startZ: 0, time: 0 };
+const LangsamerState = {
+    active: false,
+    upDone: false,
+    downDone: false,
+    startYLeft: 0,
+    startYRight: 0,
+    time: 0
+};
+
+
+let outputLock = false;
+let outputTimeout = null;
+
+function showOutputDelayed(outputDiv, newOutput) {
+
+    // Wenn gerade eine Geste angezeigt wird → ignorieren, außer neuerOutput ist NICHT "Nichts erkannt"
+    if (outputLock && newOutput === "Nichts erkannt") return;
+
+    // Setze sofort den neuen Text
+    outputDiv.innerText = newOutput;
+
+    // Wenn "Nichts erkannt" → kein Lock setzen
+    if (newOutput === "Nichts erkannt") return;
+
+    // Lock setzen
+    outputLock = true;
+
+    // Falls bereits ein Timer läuft → stoppen
+    if (outputTimeout) clearTimeout(outputTimeout);
+
+    // Nach 1 Sekunde wieder freigeben
+    outputTimeout = setTimeout(() => {
+        outputLock = false;
+    }, 1000);
+}
+
+
 // =====================
 // Hände sortieren
 // =====================
@@ -49,10 +121,11 @@ function detectHands(results) {
     return detected;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // Geste: Wie geht’s
 // =====================
-function WieGehts(hand, threshold = 0.05, threshold_mid_index = 0.005) {
+function WieGehts(hand, threshold = 0.02, threshold_mid_index = 0.005) {
     if (!hand) return false;
 
     const thumb = hand[4];
@@ -80,6 +153,55 @@ function WieGehts(hand, threshold = 0.05, threshold_mid_index = 0.005) {
     );
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// =====================
+// Ich
+// =====================
+function Ich(hand) {
+    if (!hand) return false;
+    
+    // Zeigefinger tip höher als PIP/MCP, rest Finger unten
+    const indexUp = hand[8].y < hand[6].y && hand[8].y < hand[7].y;
+    const middleDown = hand[12].y > hand[10].y;
+    const ringDown = hand[16].y > hand[14].y;
+    const pinkyDown = hand[20].y > hand[18].y;
+
+    const thumbRight = hand[4].x < hand[13].x
+
+
+    return indexUp && middleDown && ringDown && pinkyDown && thumbRight;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// =====================
+// DU
+// =====================
+function Du(hand, threshold = 0.08) {
+    if (!hand) return false;
+
+    const indexUp = hand[8].z < hand[6].z && hand[8].z < hand[7].z;
+    const middleDown = hand[12].y > hand[10].y;
+    const ringDown = hand[16].y > hand[14].y;
+    const pinkyDown = hand[20].y > hand[18].y;
+    const thumbRight = hand[4].x > hand[13].x
+
+    const thumbLow = hand[4].y > hand[8].y;
+
+    const dx = Math.abs(hand[5].x - hand[8].x);
+    const dy = Math.abs(hand[5].y - hand[8].y);
+
+
+
+    return indexUp && middleDown && ringDown && pinkyDown && thumbRight && dx < threshold && dy < threshold && thumbLow;
+
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // Bewegungen tracken
 // =====================
@@ -102,6 +224,7 @@ function movedRight(history, minDist = 0.1) {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // WieGehts + Bewegung
 // =====================
@@ -109,11 +232,15 @@ function WieGehtsBewegung(hand, history) {
     return WieGehts(hand) && (movedLeft(history) || movedRight(history));
 }
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // Hallo: offene Hand + Winken
 // =====================
 function isHandOpen(hand) {
     if (!hand) return false;
+
 
     function fingerUp(tip, mcp) {
         return hand[tip].y < hand[mcp].y;
@@ -136,8 +263,8 @@ function waving(history) {
     const last = xs[xs.length - 1];
 
     const movedEnough =
-        Math.abs(mid - first) > 0.05 &&
-        Math.abs(last - mid) > 0.05;
+        Math.abs(mid - first) > 0.1 &&
+        Math.abs(last - mid) > 0.1;
 
     const changedDirection =
         (first < mid && mid > last) ||
@@ -151,46 +278,72 @@ function Hallo(hand, history) {
 }
 
 
-// =====================
-// und DU? 
-// =====================
-function Du(hand) {
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////GUT NEU
+function Gut(hand) {
     if (!hand) return false;
 
-    // Zeigefinger tip höher als PIP/MCP, rest Finger unten
-    const indexUp = hand[8].y < hand[6].y && hand[8].y < hand[7].y;
-    const middleDown = hand[12].y > hand[10].y;
-    const ringDown = hand[16].y > hand[14].y;
-    const pinkyDown = hand[20].y > hand[18].y;
+    const fingertips = hand[8] && hand[12] && hand[16] && hand[20];
+    const thumbUp = hand[4].y < fingertips.y 
+    const thumbUp2 = hand[4].y < hand[3];
+    const thumbRight = hand[4].x < hand[6].x;
 
-    return indexUp && middleDown && ringDown && pinkyDown;
+
+    return thumbUp && thumbUp2 && thumbRight;
+
 }
+
 
 
 // =====================
 // Gut
 // =====================
-function Gut(hand) {
+function Gut_Handbewegung(hand, state) {
     if (!hand) return false;
 
-     // Daumen nach oben
-    const thumbUp = hand[4].y < hand[3].y && hand[4].y < hand[2].y;
-    const thumbHigh = hand[4].y < hand[8].y
-    const thumbHigh2 = hand[4].y < hand[12].y
-    const thumbHigh3 = hand[4].y < hand[16].y
-    const thumbHigh4 = hand[4].y < hand[20].y
+    const now = performance.now();
+    const wristY = hand[0].y;
+    const thumbTip = hand[4].y;
 
-    
-    const indexDown = hand[4].y < hand[6].y;
-    const middleDown = hand[4].y < hand[10].y;
-    const ringDown = hand[4].y < hand[14].y;
-    const pinkyDown = hand[4].y < hand[18].y;
+    // === Anfang: State starten ===
+    if (!state.inProgress) {
+        state.startY = wristY;
+        state.inProgress = true;
+        state.wentUp = false;
+        state.time = now;
+        return false;
+    }
 
-    return thumbUp && thumbHigh && thumbHigh2 && thumbHigh3 && thumbHigh4 && indexDown && middleDown && ringDown && pinkyDown;
+    // Timeout: Geste muss innerhalb 1,2 Sekunden erfolgen
+    if (now - state.time > 1200) {
+        state.inProgress = false;
+        return false;
+    }
+
+    // === Step 1: Hand hoch → y kleiner als Start ===
+    if (!state.wentUp) {
+        if (thumbTip < state.startY - 0.001) { // Hand nach oben bewegt (5% Bildhöhe)
+            state.wentUp = true;
+        }
+        return false;
+    }
+
+    // === Step 2: Hand wieder runter → y größer als Start ===
+    if (state.wentUp) {
+        if (thumbTip > state.startY + 0.001) { // Hand nach unten bewegt (5% Bildhöhe)
+            state.inProgress = false; // Geste abgeschlossen
+            return true;
+        }
+    }
+
+    return false;
 }
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // Schlecht
 // =====================
@@ -223,6 +376,7 @@ function Schlecht(hand, handLabel) {
     return fingersDown && thumbSide;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Bewegung: für Schlecht-Recognition
 // Linke Hand: muss nach rechts bewegen (last - first > minDist)
 function movedSchlechtLeft(history, minDist = 0.07) {
@@ -255,7 +409,7 @@ function SchlechtMitBewegung(hand, handLabel, history) {
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // ABEND (2 Hände)
 // =====================
@@ -286,7 +440,8 @@ function Abend(leftHand, rightHand, leftHistory, rightHistory) {
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function trackAbendMotion(hand, history) {
     if (!hand) return;
     const thumb = hand[4];
@@ -323,6 +478,7 @@ function movedToAbendRight(history) {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // =====================
 // GUTEN (2 Hände nötig)
 // =====================
@@ -339,6 +495,325 @@ function Guten(leftHand, rightHand, leftHistory, rightHistory) {
 
     return leftGood && rightGood;
 }
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// =====================
+// BITTE – Zwei Klatscher
+// =====================
+function Bitte_ClapTwice(left, right, state = BitteClapState) {
+    if (!left || !right) return false;
+
+    const now = performance.now();
+
+    // Abstand der Handflächen
+    const dx = left[0].x - right[0].x;
+    const dy = left[0].y - right[0].y;
+    const distance = Math.sqrt(dx*dx + dy*dy);
+
+    // Init
+    if (!state.active) {
+        state.active = true;
+        state.claps = 0;
+        state.lastDist = distance;
+        state.startTime = now;
+        return false;
+    }
+
+    // Timeout 1s
+    if (now - state.startTime > 1000) {
+        state.active = false;
+        return false;
+    }
+
+    // Clap detected when distance becomes very small
+    const closeEnough = distance < 0.05;
+
+    // Detect rising edge: going from open → closed
+    if (!state.wasClose && closeEnough) {
+        state.claps++;
+    }
+
+    state.wasClose = closeEnough;
+
+    // Two claps = gesture done
+    if (state.claps >= 2) {
+        state.active = false;
+        return true;
+    }
+
+    return false;
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function detectCircleMovement(hand, circleState) {
+    if (!hand) return false;
+
+    const now = performance.now();
+    const pt = hand[8];  // Zeigefinger-Spitze
+
+    // ersten Frame setzen
+    if (circleState.prevX === null) {
+        circleState.prevX = pt.x;
+        circleState.prevY = pt.y;
+        circleState.time = now;
+        return false;
+    }
+
+    // Bewegung seit letzten Frame
+    const dx = pt.x - circleState.prevX;
+    const dy = pt.y - circleState.prevY;
+
+    // neue Richtung bestimmen
+    const newDirX = Math.sign(dx);
+    const newDirY = Math.sign(dy);
+
+    // Richtungswechsel zählen
+    if (newDirX !== 0 && newDirX !== circleState.dirX) {
+        circleState.changes++;
+        circleState.dirX = newDirX;
+    }
+
+    if (newDirY !== 0 && newDirY !== circleState.dirY) {
+        circleState.changes++;
+        circleState.dirY = newDirY;
+    }
+
+    // Werte updaten
+    circleState.prevX = pt.x;
+    circleState.prevY = pt.y;
+
+    // Timeout → Reset
+    if (now - circleState.time > 1200) {
+        circleState.changes = 0;
+        circleState.time = now;
+    }
+
+    // Circle = mindestens 4 Richtungswechsel
+    if (circleState.changes >= 4) {
+        circleState.changes = 0; // reset
+        return true;
+    }
+
+    return false;
+}
+
+
+function Nochmal_2Hands(leftHand, rightHand) {
+
+    const leftCircle  = detectCircleMovement(leftHand, circleLeft);
+    const rightCircle = detectCircleMovement(rightHand, circleRight);
+
+    // Beide müssen ungefähr gleichzeitig einen Kreis machen
+    if (leftCircle && rightCircle) {
+        return true;
+    }
+
+    return false;
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// =====================
+// DANKE – Vorwärtsbewegung
+// =====================
+function Danke_ZMovement(hand, state = DankeState) {
+    if (!hand) return false;
+
+    const now = performance.now();
+    const z = hand[0].z; // Wrist depth
+
+    if (!state.active) {
+        state.active = true;
+        state.startZ = z;
+        state.time = now;
+        return false;
+    }
+
+    // Timeout 1.2s
+    if (now - state.time > 1200) {
+        state.active = false;
+        return false;
+    }
+
+    // Significant forward movement: z becomes much smaller
+    if (z < state.startZ - 0.05) {
+        state.active = false;
+        return true;
+    }
+
+    return false;
+}
+
+
+
+
+function Danke(hand) {
+    if (!hand) return false;
+
+    const thumbRight = hand[4].x > hand[8];
+
+    if (isHandOpen && thumbRight) {
+        return true;} 
+
+
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// =====================
+// LANGSAMER – Zwei Hände wippen synchron
+// =====================
+function Langsamer_2Hands(left, right, state = LangsamerState) {
+    if (!left || !right) return false;
+
+    const now = performance.now();
+    const leftY = left[0].y;
+    const rightY = right[0].y;
+
+    // Init
+    if (!state.active) {
+        state.active = true;
+        state.upDone = false;
+        state.downDone = false;
+        state.startYLeft = leftY;
+        state.startYRight = rightY;
+        state.time = now;
+        return false;
+    }
+
+    // Timeout
+    if (now - state.time > 1500) {
+        state.active = false;
+        return false;
+    }
+
+    // Step 1 → both hands move UP a little
+    if (!state.upDone) {
+        if (leftY < state.startYLeft - 0.02 &&
+            rightY < state.startYRight - 0.02) {
+            state.upDone = true;
+        }
+        return false;
+    }
+
+    // Step 2 → both hands move DOWN past original level
+    if (!state.downDone) {
+        if (leftY > state.startYLeft + 0.02 &&
+            rightY > state.startYRight + 0.02) {
+            state.downDone = true;
+            state.active = false;
+            return true;
+        }
+        return false;
+    }
+
+    return false;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function Closed(hand, threshold_X = 0.05, threshold_Y = 0.05) {
+    if(!hand) return false; 
+    
+    const dx = Math.abs(hand[4].x - hand[8].x);
+    const dy = Math.abs(hand[4].y - hand[8].y);
+
+    const dx2 = Math.abs(hand[8].x - hand[12].x);
+    const dy2 = Math.abs(hand[8].y - hand[12].y);
+
+    const dx3 = Math.abs(hand[12].x - hand[16].x);
+    const dy3 = Math.abs(hand[12].y - hand[16].y);
+
+    const dx4 = Math.abs(hand[12].x - hand[20].x);
+    const dy4 = Math.abs(hand[12].y - hand[20].y);
+
+
+    return dx < threshold_X && dy < threshold_Y && dx2 < threshold_X && dy2 < threshold_Y && dx3 < threshold_X && dy3 < threshold_Y && dx4 < threshold_X && dy4 < threshold_Y;
+
+}
+
+
+
+function Verstanden(hand) {
+    const now = Date.now();
+    let pose = null;
+
+    if (isHandOpen(hand)) pose = "open";
+    else if (Closed(hand)) pose = "closed";
+
+    if (pose) {
+        handSequence.push({ pose, time: now });
+
+        // Alte Einträge rauswerfen
+        handSequence = handSequence.filter(entry => now - entry.time <= sequenceTimeLimit);
+    }
+
+    // Prüfen, ob die Sequenz „open → closed“ vorkommt
+    for (let i = 0; i < handSequence.length - 1; i++) {
+        if (handSequence[i].pose === "open" && handSequence[i + 1].pose === "closed") {
+            handSequence = []; // zurücksetzen, sobald erkannt
+            return true; // "Verstanden" erkannt
+        }
+    }
+
+    return false; // Sequenz noch nicht komplett
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function NoNo(hand) {
+    if (!hand) return false;
+
+    const indexUp = hand[8].z < hand[6].z && hand[8].z < hand[7].z;
+    const middleDown = hand[12].y > hand[10].y;
+    const ringDown = hand[16].y > hand[14].y;
+    const pinkyDown = hand[20].y > hand[18].y;
+    const thumbRight = hand[4].x > hand[13].x
+
+    const thumbLow = hand[8].y < hand[4].y;
+
+
+
+    return indexUp && middleDown && ringDown && pinkyDown && thumbRight && thumbLow;
+}
+
+
+
+
+
+function Nicht(hand, history) {
+    return NoNo(hand) && (movedLeft(history) || movedRight(history));
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function Lieber(hand){
+    if (!hand) return false;
+
+
+
+
+}
+
+
+
+
+
 
 
 
@@ -417,22 +892,74 @@ hands.onResults((results) => {
 
     // === WIE GEHT’S & HALLO nur bei 1 Hand ===
     if (handCount === 1) {
-        if (detected.left && WieGehtsBewegung(detected.left, motionLeft)) output = "Wie geht's erkannt!";
-        if (detected.right && WieGehtsBewegung(detected.right, motionRight)) output = "Wie geht's erkannt!";
+        if (detected.left && WieGehts(detected.left) && movedLeft(motionLeft)) {
+        output = "Wie geht's erkannt!";
+}
+        if (detected.right && WieGehts(detected.right) && movedRight(motionRight)) {
+        output = "Wie geht's erkannt!";
+}
+        if (detected.left && Nicht(detected.left, motionLeft) && movedLeft(motionLeft)) output = "NICHT erkannt!";
+        if (detected.right && Nicht(detected.right, motionRight) && movedRight(motionRight)) output = "NICHT erkannt!";
+        if (detected.left && NoNo(detected.left, motionLeft)) output = "NoNo erkannt!";
+        if (detected.right && NoNo(detected.right, motionRight)) output = "NoNo erkannt!";
+
+
+
         if (detected.left && Hallo(detected.left, motionLeft)) output = "Hallo erkannt!";
         if (detected.right && Hallo(detected.right, motionRight)) output = "Hallo erkannt!";
+
+        //if (detected.left && Closed(detected.left)) output = "closed erkannt!";
+        //if (detected.right && Closed(detected.right)) output = "closed erkannt!";
+        if (detected.left && Verstanden(detected.left)) output = "Verstanden erkannt!";
+        if (detected.right && Verstanden(detected.right)) output = "Verstanden erkannt!";
+
+
+        if (detected.left && Ich(detected.left)) output = "Ich erkannt!";
+        if (detected.right && Ich(detected.right)) output = "Ich erkannt!";
         if (detected.left && Du(detected.left)) output = "Du erkannt!";
         if (detected.right && Du(detected.right)) output = "Du erkannt!";
-        if (detected.left && Gut(detected.left)) output = "Gut erkannt!";
-        if (detected.right && Gut(detected.right)) output = "Gut erkannt!";
+
+        if (detected.left && Danke(detected.left)) output = "Danke erkannt!";
+        if (detected.right && Danke(detected.right)) output = "Danke erkannt!";
+
+        //if (Gut_Handbewegung(detected.left, gutStateLeft)) output = "Gut erkannt!";
+        //if (Gut_Handbewegung(detected.right, gutStateRight)) output = "Gut erkannt!";
+        //if (detected.right && Gut(detected.right)) output = "GUT erkannt"
+        //if (detected.left && Gut(detected.left)) output = "GUT erkannt"
+        if (detected.left && Gut(detected.left, motionLeft)) output = "GUUUT erkannt!";
+        if (detected.right && Gut(detected.right, motionRight)) output = "GUUUT erkannt!";
+
         if (detected.left && SchlechtMitBewegung(detected.left, "Left", motionLeft)) output = "Schlecht erkannt!";
         if (detected.right && SchlechtMitBewegung(detected.right, "Right", motionRight)) output = "Schlecht erkannt!";
+        
+        
+        
+        //if (Danke_FingerGeste(detected.left, dankeFingerStateLeft)) output = "Danke erkannt!";
+        //if (Danke_FingerGeste(detected.right, dankeFingerStateRight)) output = "Danke erkannt!";
+        if (detected.left && Danke_ZMovement(detected.left, DankeStateLeft)) {
+        output = "Danke erkannt!";
     }
+        if (detected.right && Danke_ZMovement(detected.right, DankeStateRight)) {
+        output = "Danke erkannt!";
+    }
+        
+    }   
 
     // === GUTEN und ABEND nur bei 2 Händen ===
     if (handCount === 2) {
         if (Guten(detected.left, detected.right, motionLeft, motionRight)) output = "Guten erkannt!";
         if (Abend(detected.left, detected.right, abendLeftHistory, abendRightHistory)) output = "Abend erkannt!";
+        
+        if (Nochmal_2Hands(detected.left, detected.right)) output = "Nochmal erkannt!";
+
+        if (Bitte_ClapTwice(detected.left, detected.right, BitteClapState)) {
+        output = "Bitte erkannt!";
+    }
+
+        if (Langsamer_2Hands(detected.left, detected.right, LangsamerState)) {
+        output = "Langsamer erkannt!";
+    }
+        
     }
 
     // Hände zeichnen
@@ -444,7 +971,9 @@ hands.onResults((results) => {
     }
 
     // Output anzeigen
-    if (outputDiv) outputDiv.innerText = output;
+    if (outputDiv) showOutputDelayed(outputDiv, output);
+
+
 });
 
 // =====================

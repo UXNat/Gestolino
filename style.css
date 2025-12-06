@@ -40,6 +40,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;  /* kein Verzerren */
+    transform: scaleX(-1); /* Horizontal spiegeln */
 }
 
 /* === Canvas für Zeichnungen über dem Video === */
@@ -80,7 +81,7 @@ html, body {
 
 
 
-/* Überschrift */
+/* BLAU*/
 h1 {
     font-size: 55px;
     margin-top: 300px;
@@ -91,6 +92,19 @@ h1 {
     text-align: center;
     font-family: sans-serif;
 }
+
+
+h2 {
+    font-size: 55px;
+    margin-top: 300px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+    color: rgb(246, 222, 208);
+    text-align: center;
+    font-family: sans-serif;
+}
+
 
 
 
@@ -106,22 +120,73 @@ h1 {
     display: block; /* Startseite sichtbar beim Laden */
 }
 
+/* KAPITEL 1 SMALLTALK */
+#page7,
+#page8, 
+#page9,
+#page10,
+#page11,
+#page12,
+#page13,
+#page14,
+#page15,
+#page16 {
+    background: rgb(216, 208, 255);
+}
+
+/* KAPITEL 2 VERSTÄNDLICHKEIT */
+#page18, 
+#page19,
+#page20,
+#page21,
+#page22,
+#page23,
+#page24,
+#page25,
+#page26,
+#page27 {
+    background: rgb(170, 36, 38);
+}
+
+/* KAPITEL 3 VORLIEBEN */
+#page28, 
+#page29,
+#page30,
+#page31,
+#page32,
+#page33,
+#page34,
+#page35,
+#page36,
+#page37 {
+    background: rgb(11, 11, 130);
+}
+
+/* KAPITEL 4 NOTFALL */
+#page38,
+#page39, 
+#page40,
+#page41 {
+    background: rgb(246, 222, 208);
+}
+
+
 
 
 /*////////////////////////////////////////////////////////////////*/
 .icon_pfeil_back {
-    width: 100px;
+    width: 200px;
     position: absolute;
-    top: 100px;
-    left: 110px;
+    top: 60px;
+    left: 100px;
     cursor: pointer;
 }
 
 .icon_pfeil_vor {
-    width: 100px;
+    width: 200px;
     position: absolute;
-    top: 100px;
-    right: 110px;
+    top: 60px;
+    right: 100px;
     cursor: pointer;
 }
 
@@ -187,7 +252,7 @@ h1 {
 
 /*ICONS TOOLBAR///////////////////////////////////////////////////////*/
 .icon_Haus {
-    width: 90px;
+    width: 200px;
     position: absolute;    
     bottom: 100px;           
     left: 15%;             
@@ -197,7 +262,7 @@ h1 {
 }
 
 .icon_Hut {
-    width: 90px;
+    width: 200px;
     position: absolute;    
     bottom: 100px;           
     left: 32.5%;             
@@ -207,7 +272,7 @@ h1 {
 }
 
 .icon_Kapitel {
-    width: 90px;
+    width: 200px;
     position: absolute;    
     bottom: 100px;           
     left: 50%;             
@@ -217,7 +282,7 @@ h1 {
 }
 
 .icon_Hand {
-    width: 90px;
+    width: 200px;
     position: absolute;    
     bottom: 100px;           
     left: 67.5%;             
