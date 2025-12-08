@@ -135,7 +135,7 @@ h4 {
     position: relative;     /* Kinder absolut positionieren relativ zu Page */
     width: 1668px;
     height: 2224px;
-    background: white;
+    background: rgb(247, 247, 247);
 }
 
 
@@ -153,7 +153,9 @@ h4 {
 #page13,
 #page14,
 #page15,
-#page16 {
+#page16,
+#page43,
+#page44 {
     background: rgb(216, 208, 255);
 }
 
@@ -167,7 +169,15 @@ h4 {
 #page24,
 #page25,
 #page26,
-#page27 {
+#page27,
+#page45,
+#page46,
+#page47,
+#page48,
+#page49,
+#page50,
+#page51,
+#page52 {
     background: rgb(170, 36, 38);
 }
 
@@ -181,7 +191,11 @@ h4 {
 #page34,
 #page35,
 #page36,
-#page37 {
+#page37,
+#page53,
+#page54,
+#page55,
+#page56 {
     background: rgb(11, 11, 130);
 }
 
@@ -277,7 +291,7 @@ h4 {
 .icon_Haus {
     width: 200px;
     position: absolute;    
-    bottom: 100px;           
+    bottom: 40px;           
     left: 15%;             
     transform: translateX(-50%);
     z-index: 999;
@@ -287,7 +301,7 @@ h4 {
 .icon_Hut {
     width: 200px;
     position: absolute;    
-    bottom: 100px;           
+    bottom: 40px;           
     left: 32.5%;             
     transform: translateX(-50%);
     z-index: 999;
@@ -297,7 +311,7 @@ h4 {
 .icon_Kapitel {
     width: 200px;
     position: absolute;    
-    bottom: 100px;           
+    bottom: 40px;           
     left: 50%;             
     transform: translateX(-50%);
     z-index: 999;
@@ -307,7 +321,7 @@ h4 {
 .icon_Hand {
     width: 200px;
     position: absolute;    
-    bottom: 100px;           
+    bottom: 40px;           
     left: 67.5%;             
     transform: translateX(-50%);
     z-index: 999;
@@ -317,11 +331,21 @@ h4 {
 .icon_Profil {
     width: 200px;
     position: absolute;    
-    bottom: 100px;           
+    bottom: 40px;           
     left: 85%;             
     transform: translateX(-50%);
     z-index: 999;
     cursor: pointer;
+}
+
+.Balken {
+    width: 100%;
+    position: absolute;    
+    bottom: 1px;           
+    left: 50%;             
+    transform: translateX(-50%);
+    z-index: 998;
+
 }
 
 
