@@ -892,72 +892,67 @@ hands.onResults((results) => {
 
     // === WIE GEHT’S & HALLO nur bei 1 Hand ===
     if (handCount === 1) {
-        if (detected.left && WieGehts(detected.left) && movedLeft(motionLeft)) {
-        output = "Wie geht's erkannt!";
-}
-        if (detected.right && WieGehts(detected.right) && movedRight(motionRight)) {
-        output = "Wie geht's erkannt!";
-}
-        if (detected.left && Nicht(detected.left, motionLeft) && movedLeft(motionLeft)) output = "NICHT erkannt!";
-        if (detected.right && Nicht(detected.right, motionRight) && movedRight(motionRight)) output = "NICHT erkannt!";
-        if (detected.left && NoNo(detected.left, motionLeft)) output = "NoNo erkannt!";
-        if (detected.right && NoNo(detected.right, motionRight)) output = "NoNo erkannt!";
+        if (detected.left && WieGehts(detected.left) && movedLeft(motionLeft)) output = "Wie geht's!";
+        if (detected.right && WieGehts(detected.right) && movedRight(motionRight)) output = "Wie geht's!";
 
+        //if (detected.left && Nicht(detected.left, motionLeft) && movedLeft(motionLeft)) output = "NICHT erkannt!";
+        //if (detected.right && Nicht(detected.right, motionRight) && movedRight(motionRight)) output = "NICHT erkannt!";
+        if (detected.left && NoNo(detected.left, motionLeft)) output = "Nicht";
+        if (detected.right && NoNo(detected.right, motionRight)) output = "Nicht";
 
-
-        if (detected.left && Hallo(detected.left, motionLeft)) output = "Hallo erkannt!";
-        if (detected.right && Hallo(detected.right, motionRight)) output = "Hallo erkannt!";
+        if (detected.left && Hallo(detected.left, motionLeft)) output = "Hallo!";
+        if (detected.right && Hallo(detected.right, motionRight)) output = "Hallo!";
 
         //if (detected.left && Closed(detected.left)) output = "closed erkannt!";
         //if (detected.right && Closed(detected.right)) output = "closed erkannt!";
-        if (detected.left && Verstanden(detected.left)) output = "Verstanden erkannt!";
-        if (detected.right && Verstanden(detected.right)) output = "Verstanden erkannt!";
+        if (detected.left && Verstanden(detected.left)) output = "Verstanden!";
+        if (detected.right && Verstanden(detected.right)) output = "Verstanden!";
 
 
-        if (detected.left && Ich(detected.left)) output = "Ich erkannt!";
-        if (detected.right && Ich(detected.right)) output = "Ich erkannt!";
-        if (detected.left && Du(detected.left)) output = "Du erkannt!";
-        if (detected.right && Du(detected.right)) output = "Du erkannt!";
+        if (detected.left && Ich(detected.left)) output = "Ich";
+        if (detected.right && Ich(detected.right)) output = "Ich";
+        if (detected.left && Du(detected.left)) output = "Du";
+        if (detected.right && Du(detected.right)) output = "Du";
 
-        if (detected.left && Danke(detected.left)) output = "Danke erkannt!";
-        if (detected.right && Danke(detected.right)) output = "Danke erkannt!";
+        //if (detected.left && Danke(detected.left)) output = "Danke erkannt!";
+        //if (detected.right && Danke(detected.right)) output = "Danke erkannt!";
 
         //if (Gut_Handbewegung(detected.left, gutStateLeft)) output = "Gut erkannt!";
         //if (Gut_Handbewegung(detected.right, gutStateRight)) output = "Gut erkannt!";
         //if (detected.right && Gut(detected.right)) output = "GUT erkannt"
         //if (detected.left && Gut(detected.left)) output = "GUT erkannt"
-        if (detected.left && Gut(detected.left, motionLeft)) output = "GUUUT erkannt!";
-        if (detected.right && Gut(detected.right, motionRight)) output = "GUUUT erkannt!";
+        if (detected.left && Gut(detected.left, motionLeft)) output = "GUUUT";
+        if (detected.right && Gut(detected.right, motionRight)) output = "GUUUT";
 
-        if (detected.left && SchlechtMitBewegung(detected.left, "Left", motionLeft)) output = "Schlecht erkannt!";
-        if (detected.right && SchlechtMitBewegung(detected.right, "Right", motionRight)) output = "Schlecht erkannt!";
+        if (detected.left && SchlechtMitBewegung(detected.left, "Left", motionLeft)) output = "Schlecht";
+        if (detected.right && SchlechtMitBewegung(detected.right, "Right", motionRight)) output = "Schlecht";
         
         
         
         //if (Danke_FingerGeste(detected.left, dankeFingerStateLeft)) output = "Danke erkannt!";
         //if (Danke_FingerGeste(detected.right, dankeFingerStateRight)) output = "Danke erkannt!";
-        if (detected.left && Danke_ZMovement(detected.left, DankeStateLeft)) {
-        output = "Danke erkannt!";
-    }
-        if (detected.right && Danke_ZMovement(detected.right, DankeStateRight)) {
-        output = "Danke erkannt!";
-    }
+        //if (detected.left && Danke_ZMovement(detected.left, DankeStateLeft)) {
+       // output = "Danke erkannt!";
+    //}
+        //if (detected.right && Danke_ZMovement(detected.right, DankeStateRight)) {
+       // output = "Danke erkannt!";
+    //}
         
     }   
 
     // === GUTEN und ABEND nur bei 2 Händen ===
     if (handCount === 2) {
-        if (Guten(detected.left, detected.right, motionLeft, motionRight)) output = "Guten erkannt!";
-        if (Abend(detected.left, detected.right, abendLeftHistory, abendRightHistory)) output = "Abend erkannt!";
+        if (Guten(detected.left, detected.right, motionLeft, motionRight)) output = "Guten";
+        if (Abend(detected.left, detected.right, abendLeftHistory, abendRightHistory)) output = "Abend";
         
-        if (Nochmal_2Hands(detected.left, detected.right)) output = "Nochmal erkannt!";
+        if (Nochmal_2Hands(detected.left, detected.right)) output = "Nochmal";
 
-        if (Bitte_ClapTwice(detected.left, detected.right, BitteClapState)) {
-        output = "Bitte erkannt!";
-    }
+        //if (Bitte_ClapTwice(detected.left, detected.right, BitteClapState)) {
+        //output = "Bitte erkannt!";
+    //}
 
         if (Langsamer_2Hands(detected.left, detected.right, LangsamerState)) {
-        output = "Langsamer erkannt!";
+        output = "Langsamer";
     }
         
     }
@@ -971,9 +966,20 @@ hands.onResults((results) => {
     }
 
     // Output anzeigen
-    if (outputDiv) showOutputDelayed(outputDiv, output);
+    if (outputDiv) {
+    // Delay starten
+    showOutputDelayed(outputDiv, output);
 
-
+    // Transparenz NUR basierend auf dem tatsächlichen, sichtbaren Text
+    // kleine Verzögerung, damit der Text von der Delay-Funktion gesetzt wurde
+    setTimeout(() => {
+        if (outputDiv.textContent === "Nichts erkannt") {
+            outputDiv.classList.add("transparentOutput");
+        } else {
+            outputDiv.classList.remove("transparentOutput");
+        }
+    }, 20); // 20ms reicht, um sicherzustellen, dass showOutputDelayed den Text gesetzt hat
+}
 });
 
 // =====================
@@ -988,7 +994,7 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".page").forEach(p => p.style.display = "none");
         document.getElementById(id).style.display = "block";
 
-        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41"]; // Seiten mit Kamera
+        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41", "page44", "page56", "page46", "page48", "page50", "page52", "page54"]; // Seiten mit Kamera
         const cameraContainer = document.getElementById("cameraContainer");
 
         if (cameraPages.includes(id)) {
@@ -1190,8 +1196,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage5_from44_ICON").addEventListener("click", () => showPage("page5"));
     document.getElementById("gotoPage42_from44_ICON").addEventListener("click", () => showPage("page42"));
     document.getElementById("gotoPage43_from44").addEventListener("click", () => showPage("page43"));
-    //goto17
-    document.getElementById("gotoPage17_from44").addEventListener("click", () => showPage("page17"));
+    
 
 
         //kap 2
@@ -1276,9 +1281,8 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage5_from54_ICON").addEventListener("click", () => showPage("page5"));
     document.getElementById("gotoPage42_from54_ICON").addEventListener("click", () => showPage("page42"));
     document.getElementById("gotoPage53_from54").addEventListener("click", () => showPage("page53"));
-
-
-
+        //goto17
+    document.getElementById("gotoPage17_from54").addEventListener("click", () => showPage("page17"));
 
 
 
@@ -1287,10 +1291,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage3_from55_ICON").addEventListener("click", () => showPage("page3"));
     document.getElementById("gotoPage5_from55_ICON").addEventListener("click", () => showPage("page5"));
     document.getElementById("gotoPage42_from55_ICON").addEventListener("click", () => showPage("page42"));
-    document.getElementById("gotoPage53_from55").addEventListener("click", () => showPage("page53"));
-
-
-
+    document.getElementById("gotoPage43_from55").addEventListener("click", () => showPage("page43"));
 
     document.getElementById("gotoPage56").addEventListener("click", () => showPage("page56"));
     document.getElementById("gotoPage1_from56_ICON").addEventListener("click", () => showPage("page1"));
@@ -1298,8 +1299,13 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage5_from56_ICON").addEventListener("click", () => showPage("page5"));
     document.getElementById("gotoPage42_from56_ICON").addEventListener("click", () => showPage("page42"));
     document.getElementById("gotoPage55_from56").addEventListener("click", () => showPage("page55"));
-    // goto17
+        //goto17
     document.getElementById("gotoPage17_from56").addEventListener("click", () => showPage("page17"));
+
+
+
+
+   
 
 
 

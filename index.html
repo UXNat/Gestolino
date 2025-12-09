@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <title>Handerkennung Demo</title>
@@ -9,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 </head>
+
 <body>
 
 
@@ -24,877 +26,894 @@
     <script src="script.js"></script>
 
 
-<!-- STARTSCREEN -->
-<!-- Page 1 -->
-<div class="page" id="page1">
-    <h1>seite 1: Hallo! Ich bin Otto yap yap yap. teeeeext unendlich langer teeeext ich will schauen wo die grenze ist und ob es auch dann stoppt irgendwann???</h1>
-
-    <img src="images/Pfeil_blau.png" id="gotoPage2" class="icon_pfeil_vor"> 
-
-    <img src="images/OTTO.png"  class="icon_Otto"> 
-
-    <img src="images/Icon_Haus_Dunkelblau.png"  class="icon_Haus" > 
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from1_ICON">
-    <img src="images/Icon_Buch_Lila.png"  class="icon_Kapitel" id="gotoPage5_from1_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from1_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-    
-</div>
-
-<!-- Page 2 -->
-<div class="page" id="page2" style="display:none;">
-    <h1>Seite 2: immernoch Otto!</h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage3" class="icon_pfeil_vor">
-    <img src="images/OTTO.png"  class="icon_Otto"> 
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage1_from2" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Dunkelblau.png"  class="icon_Haus" id="gotoPage1_from2_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from2_ICON">
-    <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from2_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from2_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-<!-- FACTS SCREEN -->
- <!-- absätze: <p> text text <\p>-->
-<!-- Page 3 -->
-<div class="page" id="page3" style="display:none;">
-    <h1>Seite 3, <p></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. </p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. </p>
-        <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-        <p>Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage4" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage2_from3" class="icon_pfeil_back">
+    <!-- STARTSCREEN -->
+    <!-- Page 1 -->
+    <div class="page" id="page1">
+        <h1>seite 1: Hallo! Ich bin Otto yap yap yap. teeeeext unendlich langer teeeext ich will schauen wo die grenze
+            ist und ob es auch dann stoppt irgendwann???</h1>
+
+        <img src="images/Pfeil_blau.png" id="gotoPage2" class="icon_pfeil_vor">
+
+        <img src="images/OTTO.png" class="icon_Otto">
+
+        <img src="images/Icon_Haus_Dunkelblau.png" class="icon_Haus">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from1_ICON">
+        <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from1_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from1_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page" id="page2" style="display:none;">
+        <h1>Seite 2: immernoch Otto!</h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage3" class="icon_pfeil_vor">
+        <img src="images/OTTO.png" class="icon_Otto">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage1_from2" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Dunkelblau.png" class="icon_Haus" id="gotoPage1_from2_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from2_ICON">
+        <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from2_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from2_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+    <!-- FACTS SCREEN -->
+    <!-- absätze: <p> text text <\p>-->
+    <!-- Page 3 -->
+    <div class="page" id="page3" style="display:none;">
+        <h1>Seite 3, <p></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
+            labore et dolore magna aliqua. </p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi
+                consequat. </p>
+            <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            <p>Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+        </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage4" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage2_from3" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from3_ICON">
+        <img src="images/Icon_Notiz_Blau_Neu.png" class="icon_Hut">
+        <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from3_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from3_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
 
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from3_ICON">  
-    <img src="images/Icon_Notiz_Dunkelblau.png"  class="icon_Hut" >
-    <img src="images/Icon_Buch_Lila.png"  class="icon_Kapitel" id="gotoPage5_from3_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from3_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-<!-- Page 4 -->
-<div class="page" id="page4" style="display:none;">
-    <h1>Seite 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage5" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage3_from4" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from4_ICON">  
-    <img src="images/Icon_Notiz_Dunkelblau.png"  class="icon_Hut" id="gotoPage3_from4_ICON">
-    <img src="images/Icon_Buch_Lila.png"  class="icon_Kapitel" id="gotoPage5_from4_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from4_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-<!-- KAPITELSCREEN -->
-<!-- Page 5 -->
-<div class="page" id="page5" style="display:none;">
-    <h1>Page 5! Kapitelsss</h1>
-    <img src="images/Icon_Smalltalk.png" id="gotoPage7" class="Icon_Smalltalk">
-    <img src="images/Icon_Verstandlichkeit.png" id="gotoPage18" class="Icon_Verstaendlichkeit">
-    <img src="images/Icon_Vorlieben.png" id="gotoPage28" class="Icon_Vorlieben">
-    <img src="images/Icon_Notfall.png" id="gotoPage38" class="Icon_Notfall">
-    
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from5_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from5_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" >
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from5_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-<!-- KAPITEL 1 SMALLTALK -->
-
-
-<!-- Page 7 -->
-<div class="page" id="page7" style="display:none;">
-    <h1>Page 7, Hallo!</h1>
-
+    <!-- Page 4 -->
+    <div class="page" id="page4" style="display:none;">
+        <h1>Seite 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex
+            ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+        </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage5" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage3_from4" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from4_ICON">
+        <img src="images/Icon_Notiz_Dunkelblau.png" class="icon_Hut" id="gotoPage3_from4_ICON">
+        <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from4_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from4_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+    <!-- KAPITELSCREEN -->
+    <!-- Page 5 -->
+    <div class="page" id="page5" style="display:none;">
+        <h1>Page 5! Kapitelsss</h1>
+        <img src="images/Icon_KapitelSmalltalk.png" id="gotoPage7" class="Icon_Smalltalk">
+        <img src="images/Icon_KapitelVerstandlichkeit.png" id="gotoPage18" class="Icon_Verstaendlichkeit">
+        <img src="images/Icon_KapitelVorlieben.png" id="gotoPage28" class="Icon_Vorlieben">
+        <img src="images/Icon_KapitelNotfall.png" id="gotoPage38" class="Icon_Notfall">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from5_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from5_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from5_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
 
-    <!-- Video Beispiel -->
-    <video class="videoGross" autoplay loop muted playsinline>
-        <source src="videos/Guten_Abend.mp4" type="video/mp4">
-        Dein Browser unterstützt dieses Videoformat nicht.
-    </video>
+    <!-- KAPITEL 1 SMALLTALK -->
 
 
-    <img src="images/Pfeil_blau.png" id="gotoPage8" class="icon_pfeil_vor">
+    <!-- Page 7 -->
+    <div class="page" id="page7" style="display:none;">
+        <h1>Page 7, Hallo!</h1>
 
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from7_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from7_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from7_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from7_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 8 -->
-<div class="page" id="page8" style="display:none;">
-    <h1>Page 8 Hallo! mit kamera</h1>
-
-
-    <!-- Video Beispiel -->
-    <video class="videoKlein" autoplay loop muted playsinline>
-        <source src="videos/Guten_Abend.mp4" type="video/mp4">
-        Dein Browser unterstützt dieses Videoformat nicht.
-    </video>
-
-
-    <img src="images/Pfeil_blau.png" id="gotoPage9" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from8" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from8_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from8_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from8_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from8_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-<!-- 2:  -->
-<!-- Page 9 -->
-<div class="page" id="page9" style="display:none;">
-    <h1>Seite 9: Guten Abend! </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage10" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage7_from9" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from9_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from9_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from9_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from9_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 10 -->
-<div class="page" id="page10" style="display:none;">
-    <h1>Seite 10: Guten Abend! mit Kamera </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage11" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from10" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from10_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from10_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from10_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from10_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-<!-- 3:  -->
-<!-- Page 11 -->
-<div class="page" id="page11" style="display:none;">
-    <h1>Seite 11: Wie Gehts? </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage12" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage9_from11" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from11_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from11_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from11_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from11_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 12 -->
-<div class="page" id="page12" style="display:none;">
-    <h1>Seite 12: Wie gehts? mit kamera </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage13" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from12" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from12_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from12_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from12_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from12_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-<!-- 4:  -->
-<!-- Page 13 -->
-<div class="page" id="page13" style="display:none;">
-    <h1>Seite 13: Dir? </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage14" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage11_from13" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from13_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from13_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from13_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from13_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 14 -->
-<div class="page" id="page14" style="display:none;">
-    <h1>Seite 14: Dir? mit Kamera </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage15" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from14" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from14_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from14_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from14_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from14_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-<!-- 5:  -->
-<!-- Page 15 -->
-<div class="page" id="page15" style="display:none;">
-    <h1>Seite 15: Gut</h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage16" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage13_from15" class="icon_pfeil_back">
-    
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from15_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from15_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from15_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from15_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 16 -->
-<div class="page" id="page16" style="display:none;">
-    <h1>Seite 16: Gut mit kamera </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage43" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage15_from16" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from16_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from16_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from16_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from16_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-<!-- Page 43 -->
-<div class="page" id="page43" style="display:none;">
-    <h1>Seite 43: Schlecht  </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage44" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage15_from43" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from43_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from43_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from43_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from43_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 44 -->
-<div class="page" id="page44" style="display:none;">
-    <h1>Seite 44: Schlecht mit Kamera </h1>
-    <img src="images/Pfeil_blau.png" id="gotoPage17_from44" class="icon_pfeil_vor">
-    <img src="images/Pfeil_blau_Back.png" id="gotoPage43_from44" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from44_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from44_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from44_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from44_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-
-<!-- ZWISCHENSCREEN OTTO -->
-<!-- Page 17 -->
-<div class="page" id="page17" style="display:none;">
-    <h1>Seite 17: SUper! geh zurück zu den kapiteln oder ans ende der app </h1>
-    <img src="images/Icon_Hut_Dunkelblau.png" id="gotoPage42" class="icon_pfeil_vor">
-    <img src="images/Icon_Buch_Dunkelbalu.png" id="gotoPage5_from17" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from17_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from17_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from17_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from17_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-
-<!-- Page 18-->
-<div class="page" id="page18" style="display:none;">
-    <h2>Seite 18: Bitte </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage19" class="icon_pfeil_vor">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from18_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from18_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"class="icon_Kapitel" id="gotoPage5_from18_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from18_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-<!-- Page 19-->
-<div class="page" id="page19" style="display:none;">
-    <h2>Seite 19: Bitte mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage20" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from19" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from19_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from19_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from19_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from19_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 20-->
-<div class="page" id="page20" style="display:none;">
-    <h2>Seite 20: Danke </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage21" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage18_from20" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from20_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from20_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from20_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from20_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 21-->
-<div class="page" id="page21" style="display:none;">
-    <h2>Seite 21: Danke mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage22" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from21" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from21_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from21_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from21_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from21_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 22-->
-<div class="page" id="page22" style="display:none;">
-    <h2>Seite 22: langsamer!</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage23" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage20_from22" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from22_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from22_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from22_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from22_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 23-->
-<div class="page" id="page23" style="display:none;">
-    <h2>Seite 23: langsamer! mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage24" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from23" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from23_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from23_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from23_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from23_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 24-->
-<div class="page" id="page24" style="display:none;">
-    <h2>Seite 24: nochmal</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage25" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage22_from24" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from24_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from24_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from24_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from24_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 25-->
-<div class="page" id="page25" style="display:none;">
-    <h2>Seite 25: Nochmal mit kamera </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage26" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from25" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from25_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from25_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from25_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from25_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 26-->
-<div class="page" id="page26" style="display:none;">
-    <h2>Seite 26: ich </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage27" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage24_from26" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from26_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from26_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from26_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from26_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 27-->
-<div class="page" id="page27" style="display:none;">
-    <h2>Seite 27: ich mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage45" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage26_from27" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from27_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from27_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from27_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from27_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 45-->
-<div class="page" id="page45" style="display:none;">
-    <h2>Seite 27: dich </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage46" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage26_from45" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from45_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from45_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from45_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from45_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 46-->
-<div class="page" id="page46" style="display:none;">
-    <h2>Seite 27: dich mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage47" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage45_from46" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from46_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from46_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from46_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from46_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 47-->
-<div class="page" id="page47" style="display:none;">
-    <h2>Seite 27: nicht </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage48" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage45_from47" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from47_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from47_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from47_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from47_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 48-->
-<div class="page" id="page48" style="display:none;">
-    <h2>Seite 27: nicht mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage49" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage47_from48" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from48_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from48_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from48_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from48_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 49-->
-<div class="page" id="page49" style="display:none;">
-    <h2>Seite 27: verstanden</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage50" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage47_from49" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from49_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from49_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from49_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from49_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 50-->
-<div class="page" id="page50" style="display:none;">
-    <h2>Seite 27: verstanden mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage51" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage49_from50" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from50_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from50_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from50_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from50_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 51-->
-<div class="page" id="page51" style="display:none;">
-    <h2>Seite 27: ich habe dich nicht verstanden! </h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage52" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage49_from51" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from51_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from51_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from51_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from51_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 52-->
-<div class="page" id="page52" style="display:none;">
-    <h2>Seite 27: ich habe dich nicht verstanden! mit kamera</h2>
-    <img src="images/Pfeil_beige.png" id="gotoPage17_from52" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage51_from52" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from52_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from52_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from52_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from52_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-
-
-
-
-
-
-<!-- Page 28-->
-<div class="page" id="page28" style="display:none;">
-    <h3>Seite 28: du  </h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage29" class="icon_pfeil_vor">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from28_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from28_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from28_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from28_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 29-->
-<div class="page" id="page29" style="display:none;">
-    <h3>Seite 29: du mit kamera</h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage30" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from29" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from29_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from29_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from29_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from29_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 30-->
-<div class="page" id="page30" style="display:none;">
-    <h3>Seite 30: lieber </h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage31" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage28_from30" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from30_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from30_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from30_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from30_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 31-->
-<div class="page" id="page31" style="display:none;">
-    <h3>Seite 31: lieber mit kamera</h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage32" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from31" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from31_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from31_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from31_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from31_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 32-->
-<div class="page" id="page32" style="display:none;">
-    <h3>Seite 32: sommer </h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage33" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage30_from32" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from32_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from32_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from32_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from32_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 33-->
-<div class="page" id="page33" style="display:none;">
-    <h3>Seite 33: sommer mit kamera</h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage34" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from33" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from33_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from33_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from33_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from33_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 34-->
-<div class="page" id="page34" style="display:none;">
-    <h3>Seite 34: oder </h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage35" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage32_from34" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from34_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from34_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from34_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from34_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 35-->
-<div class="page" id="page35" style="display:none;">
-    <h3>Seite 35: oder mit kamera</h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage36" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from35" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from35_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from35_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from35_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from35_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 36-->
-<div class="page" id="page36" style="display:none;">
-    <h3>Seite 36: winter </h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage37" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage34_from36" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from36_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from36_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from36_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from36_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 37-->
-<div class="page" id="page37" style="display:none;">
-    <h3>Seite 37: winter mit kamera</h3>
-    <img src="images/Pfeil_lila.png" id="gotoPage53" class="icon_pfeil_vor">
-    <img src="images/Pfeil_lila_Back.png" id="gotoPage36_from37" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from37_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from37_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from37_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from37_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 53-->
-<div class="page" id="page53" style="display:none;">
-    <h3>Seite 27: hast du lieber Sommer oder winter?</h3>
-    <img src="images/Pfeil_beige.png" id="gotoPage54" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage36_from53" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from53_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from53_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from53_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from53_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 54-->
-<div class="page" id="page54" style="display:none;">
-    <h3>Seite 27: hast du lieber Sommer oder winter? mit kamera</h3>
-    <img src="images/Pfeil_beige.png" id="gotoPage55" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage53_from54" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from54_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from54_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from54_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from54_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 55-->
-<div class="page" id="page55" style="display:none;">
-    <h3>Seite 27: whatthehelly</h3>
-    <img src="images/Pfeil_beige.png" id="gotoPage56" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage53_from55" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from55_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from55_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from55_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from55_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 56-->
-<div class="page" id="page56" style="display:none;">
-    <h3>Seite 27: whatthehelly 2 </h3>
-    <img src="images/Pfeil_beige.png" id="gotoPage17_from56" class="icon_pfeil_vor">
-    <img src="images/Pfeil_beige_Back.png" id="gotoPage55_from56" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from56_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from56_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from56_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from56_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-
-
-
-
-<!-- Page 38-->
-<div class="page" id="page38" style="display:none;">
-    <h4>Seite 38: </h4>
-    <img src="images/Pfeil_rot.png" id="gotoPage39" class="icon_pfeil_vor">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from38_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from38_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from38_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from38_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 39-->
-<div class="page" id="page39" style="display:none;">
-    <h4>Seite 39: </h4>
-    <img src="images/Pfeil_rot.png" id="gotoPage40" class="icon_pfeil_vor">
-    <img src="images/Pfeil_rot_Back.png" id="gotoPage5_from39" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from39_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from39_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from39_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from39_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 40-->
-<div class="page" id="page40" style="display:none;">
-    <h4>Seite 40: </h4>
-    <img src="images/Pfeil_rot.png" id="gotoPage41" class="icon_pfeil_vor">
-    <img src="images/Pfeil_rot_Back.png" id="gotoPage38_from40" class="icon_pfeil_back">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from40_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from40_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from40_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from40_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-<!-- Page 41-->
-<div class="page" id="page41" style="display:none;">
-    <h4>Seite 41: </h4>
-    <img src="images/Pfeil_rot.png" id="gotoPage17_from41" class="icon_pfeil_vor">
-    <img src="images/Pfeil_rot_Back.png" id="gotoPage40_from41" class="icon_pfeil_back">
-
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from41_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from41_ICON">
-    <img src="images/Icon_Buch_Dunkelbalu.png"  class="icon_Kapitel" id="gotoPage5_from41_ICON">
-    <img src="images/Icon_Hut_Lila.png"  class="icon_Hand" id="gotoPage42_from41_ICON">
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-<!-- Page 42-->
-<div class="page" id="page42" style="display:none;">
-    <h1>Seite 42: </h1>
-    <img src="images/Icon_Haus_Dunkelblau.png" id="gotoPage1" class="icon_pfeil_vor">
-
-    <img src="images/Icon_Haus_Lila.png"  class="icon_Haus" id="gotoPage1_from42_ICON">  
-    <img src="images/Icon_Notiz_Lila.png"  class="icon_Hut" id="gotoPage3_from42_ICON">
-    <img src="images/Icon_Buch_Lila.png"  class="icon_Kapitel" id="gotoPage5_from42_ICON">
-    <img src="images/Icon_Hut_Dunkelblau.png"  class="icon_Hand" >
-    <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
-    <img src="images/Balken_smaller.png" class="Balken">
-</div>
-
-
-
-
-
-
-
-<!-- GLOBALER KAMERA-CONTAINER -->
-<div id="cameraContainer" style="display:none; margin:auto; max-width:400px;">
-    <video id="video" autoplay muted playsinline></video>
-    <canvas id="canvas"></canvas>
-    <div id="output"></div>
-</div>
-
-<script src="script.js"></script>
+
+        <!-- Video Beispiel -->
+        <video class="videoGross" autoplay loop muted playsinline>
+            <source src="videos/Guten_Abend.mp4" type="video/mp4">
+            Dein Browser unterstützt dieses Videoformat nicht.
+        </video>
+
+
+        <img src="images/Pfeil_blau.png" id="gotoPage8" class="icon_pfeil_vor">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from7_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from7_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from7_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from7_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page" id="page8" style="display:none;">
+        <h1>Page 8 Hallo! mit kamera</h1>
+
+
+        <!-- Video Beispiel -->
+        <video class="videoKlein" autoplay loop muted playsinline>
+            <source src="videos/Guten_Abend.mp4" type="video/mp4">
+            Dein Browser unterstützt dieses Videoformat nicht.
+        </video>
+
+
+        <img src="images/Pfeil_blau.png" id="gotoPage9" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from8" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from8_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from8_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from8_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from8_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+    <!-- 2:  -->
+    <!-- Page 9 -->
+    <div class="page" id="page9" style="display:none;">
+        <h1>Seite 9: Guten Abend! </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage10" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage7_from9" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from9_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from9_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from9_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from9_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 10 -->
+    <div class="page" id="page10" style="display:none;">
+        <h1>Seite 10: Guten Abend! mit Kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage11" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from10" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from10_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from10_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from10_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from10_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+    <!-- 3:  -->
+    <!-- Page 11 -->
+    <div class="page" id="page11" style="display:none;">
+        <h1>Seite 11: Wie Gehts? </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage12" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage9_from11" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from11_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from11_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from11_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from11_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 12 -->
+    <div class="page" id="page12" style="display:none;">
+        <h1>Seite 12: Wie gehts? mit kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage13" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from12" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from12_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from12_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from12_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from12_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+    <!-- 4:  -->
+    <!-- Page 13 -->
+    <div class="page" id="page13" style="display:none;">
+        <h1>Seite 13: Dir? </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage14" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage11_from13" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from13_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from13_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from13_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from13_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 14 -->
+    <div class="page" id="page14" style="display:none;">
+        <h1>Seite 14: Dir? mit Kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage15" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage5_from14" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from14_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from14_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from14_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from14_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+    <!-- 5:  -->
+    <!-- Page 15 -->
+    <div class="page" id="page15" style="display:none;">
+        <h1>Seite 15: Gut</h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage16" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage13_from15" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from15_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from15_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from15_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from15_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 16 -->
+    <div class="page" id="page16" style="display:none;">
+        <h1>Seite 16: Gut mit kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage43" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage15_from16" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from16_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from16_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from16_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from16_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+    <!-- Page 43 -->
+    <div class="page" id="page43" style="display:none;">
+        <h1>Seite 43: Schlecht </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage44" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage15_from43" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from43_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from43_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from43_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from43_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 44 -->
+    <div class="page" id="page44" style="display:none;">
+        <h1>Seite 44: Schlecht mit Kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage55" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage43_from44" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from44_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from44_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from44_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from44_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 55 -->
+    <div class="page" id="page55" style="display:none;">
+        <h1>Seite 55: TSCHèSSSSSS </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage56" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage43_from55" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from55_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from55_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from55_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from55_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 56 -->
+    <div class="page" id="page56" style="display:none;">
+        <h1>Seite 44: TSCHPèSSSSSS mit kamera </h1>
+        <img src="images/Pfeil_blau.png" id="gotoPage17_from56" class="icon_pfeil_vor">
+        <img src="images/Pfeil_blau_Back.png" id="gotoPage55_from56" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from56_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from56_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from56_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from56_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ZWISCHENSCREEN OTTO -->
+    <!-- Page 17 -->
+    <div class="page" id="page17" style="display:none;">
+        <h5>Seite 17: SUper! geh zurück zu den kapiteln oder ans ende der app </h5>
+        <img src="images/Ende_Button_neu.png" id="gotoPage42" class="Lernlektion_Beenden">
+        <img src="images/Kapitel_Button_neu.png" id="gotoPage5_from17" class="Zuruck_zur_Kapitelubersicht">
+        <img src="images/OTTO.png" id="gotoPage42" class="ZwischenOtto">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from17_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from17_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from17_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from17_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+
+    <!-- Page 18-->
+    <div class="page" id="page18" style="display:none;">
+        <h2>Seite 18: Bitte </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage19" class="icon_pfeil_vor">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from18_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from18_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from18_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from18_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+    <!-- Page 19-->
+    <div class="page" id="page19" style="display:none;">
+        <h2>Seite 19: Bitte mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage20" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from19" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from19_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from19_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from19_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from19_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 20-->
+    <div class="page" id="page20" style="display:none;">
+        <h2>Seite 20: Danke </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage21" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage18_from20" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from20_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from20_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from20_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from20_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 21-->
+    <div class="page" id="page21" style="display:none;">
+        <h2>Seite 21: Danke mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage22" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from21" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from21_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from21_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from21_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from21_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 22-->
+    <div class="page" id="page22" style="display:none;">
+        <h2>Seite 22: langsamer!</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage23" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage20_from22" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from22_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from22_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from22_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from22_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 23-->
+    <div class="page" id="page23" style="display:none;">
+        <h2>Seite 23: langsamer! mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage24" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from23" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from23_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from23_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from23_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from23_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 24-->
+    <div class="page" id="page24" style="display:none;">
+        <h2>Seite 24: nochmal</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage25" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage22_from24" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from24_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from24_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from24_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from24_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 25-->
+    <div class="page" id="page25" style="display:none;">
+        <h2>Seite 25: Nochmal mit kamera </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage26" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage5_from25" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from25_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from25_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from25_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from25_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 26-->
+    <div class="page" id="page26" style="display:none;">
+        <h2>Seite 26: ich </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage27" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage24_from26" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from26_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from26_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from26_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from26_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 27-->
+    <div class="page" id="page27" style="display:none;">
+        <h2>Seite 27: ich mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage45" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage26_from27" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from27_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from27_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from27_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from27_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 45-->
+    <div class="page" id="page45" style="display:none;">
+        <h2>Seite 27: dich </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage46" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage26_from45" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from45_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from45_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from45_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from45_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 46-->
+    <div class="page" id="page46" style="display:none;">
+        <h2>Seite 27: dich mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage47" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage45_from46" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from46_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from46_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from46_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from46_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 47-->
+    <div class="page" id="page47" style="display:none;">
+        <h2>Seite 27: nicht </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage48" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage45_from47" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from47_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from47_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from47_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from47_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 48-->
+    <div class="page" id="page48" style="display:none;">
+        <h2>Seite 27: nicht mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage49" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage47_from48" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from48_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from48_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from48_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from48_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 49-->
+    <div class="page" id="page49" style="display:none;">
+        <h2>Seite 27: verstanden</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage50" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage47_from49" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from49_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from49_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from49_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from49_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 50-->
+    <div class="page" id="page50" style="display:none;">
+        <h2>Seite 27: verstanden mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage51" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage49_from50" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from50_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from50_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from50_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from50_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 51-->
+    <div class="page" id="page51" style="display:none;">
+        <h2>Seite 27: ich habe dich nicht verstanden! </h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage52" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage49_from51" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from51_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from51_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from51_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from51_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 52-->
+    <div class="page" id="page52" style="display:none;">
+        <h2>Seite 27: ich habe dich nicht verstanden! mit kamera</h2>
+        <img src="images/Pfeil_beige.png" id="gotoPage17_from52" class="icon_pfeil_vor">
+        <img src="images/Pfeil_beige_Back.png" id="gotoPage51_from52" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from52_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from52_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from52_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from52_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Page 28-->
+    <div class="page" id="page28" style="display:none;">
+        <h3>Seite 28: du </h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage29" class="icon_pfeil_vor">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from28_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from28_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from28_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from28_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 29-->
+    <div class="page" id="page29" style="display:none;">
+        <h3>Seite 29: du mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage30" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from29" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from29_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from29_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from29_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from29_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 30-->
+    <div class="page" id="page30" style="display:none;">
+        <h3>Seite 30: lieber </h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage31" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage28_from30" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from30_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from30_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from30_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from30_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 31-->
+    <div class="page" id="page31" style="display:none;">
+        <h3>Seite 31: lieber mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage32" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from31" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from31_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from31_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from31_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from31_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 32-->
+    <div class="page" id="page32" style="display:none;">
+        <h3>Seite 32: sommer </h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage33" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage30_from32" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from32_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from32_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from32_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from32_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 33-->
+    <div class="page" id="page33" style="display:none;">
+        <h3>Seite 33: sommer mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage34" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from33" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from33_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from33_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from33_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from33_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 34-->
+    <div class="page" id="page34" style="display:none;">
+        <h3>Seite 34: oder </h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage35" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage32_from34" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from34_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from34_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from34_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from34_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 35-->
+    <div class="page" id="page35" style="display:none;">
+        <h3>Seite 35: oder mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage36" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage5_from35" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from35_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from35_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from35_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from35_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 36-->
+    <div class="page" id="page36" style="display:none;">
+        <h3>Seite 36: winter </h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage37" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage34_from36" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from36_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from36_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from36_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from36_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 37-->
+    <div class="page" id="page37" style="display:none;">
+        <h3>Seite 37: winter mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage53" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage36_from37" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from37_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from37_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from37_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from37_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 53-->
+    <div class="page" id="page53" style="display:none;">
+        <h3>Seite 27: hast du lieber Sommer oder winter?</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage54" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage36_from53" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from53_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from53_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from53_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from53_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 54-->
+    <div class="page" id="page54" style="display:none;">
+        <h3>Seite 27: hast du lieber Sommer oder winter? mit kamera</h3>
+        <img src="images/Pfeil_lila.png" id="gotoPage17_from54" class="icon_pfeil_vor">
+        <img src="images/Pfeil_lila_Back.png" id="gotoPage53_from54" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from54_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from54_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from54_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from54_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Page 38-->
+    <div class="page" id="page38" style="display:none;">
+        <h4>Seite 38: </h4>
+        <img src="images/Pfeil_rot.png" id="gotoPage39" class="icon_pfeil_vor">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from38_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from38_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from38_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from38_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 39-->
+    <div class="page" id="page39" style="display:none;">
+        <h4>Seite 39: </h4>
+        <img src="images/Pfeil_rot.png" id="gotoPage40" class="icon_pfeil_vor">
+        <img src="images/Pfeil_rot_Back.png" id="gotoPage5_from39" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from39_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from39_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from39_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from39_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 40-->
+    <div class="page" id="page40" style="display:none;">
+        <h4>Seite 40: </h4>
+        <img src="images/Pfeil_rot.png" id="gotoPage41" class="icon_pfeil_vor">
+        <img src="images/Pfeil_rot_Back.png" id="gotoPage38_from40" class="icon_pfeil_back">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from40_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from40_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from40_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from40_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+    <!-- Page 41-->
+    <div class="page" id="page41" style="display:none;">
+        <h4>Seite 41: </h4>
+        <img src="images/Pfeil_rot.png" id="gotoPage17_from41" class="icon_pfeil_vor">
+        <img src="images/Pfeil_rot_Back.png" id="gotoPage40_from41" class="icon_pfeil_back">
+
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from41_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from41_ICON">
+        <img src="images/Icon_Buch_Dunkelbalu.png" class="icon_Kapitel" id="gotoPage5_from41_ICON">
+        <img src="images/Icon_Hut_Lila.png" class="icon_Hand" id="gotoPage42_from41_ICON">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+    <!-- Page 42-->
+    <div class="page" id="page42" style="display:none;">
+        <h1>Seite 42: </h1>
+        <img src="images/Start_Button_neu.png" id="gotoPage1" class="Zuruck_An_Den_Anfang">
+
+        <img src="images/Icon_Haus_Lila.png" class="icon_Haus" id="gotoPage1_from42_ICON">
+        <img src="images/Icon_Notiz_Lila_neu.png" class="icon_Hut" id="gotoPage3_from42_ICON">
+        <img src="images/Icon_Buch_Lila.png" class="icon_Kapitel" id="gotoPage5_from42_ICON">
+        <img src="images/Icon_Hut_Dunkelblau.png" class="icon_Hand">
+        <img src="images/Icon_Profil_Lila.png" class="icon_Profil">
+        <img src="images/Balken_Neu_smaller.png" class="Balken">
+    </div>
+
+
+
+
+
+
+
+    <!-- GLOBALER KAMERA-CONTAINER -->
+    <div id="cameraContainer" style="display:none; margin:auto; max-width:400px;">
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="canvas"></canvas>
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
 
 
 </body>
+
 </html>

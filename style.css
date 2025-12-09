@@ -57,19 +57,42 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
 
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
     color: rgb(11, 11, 130);
 
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255);
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 12px;
     z-index: 10;
 
     position: absolute;
     z-index: 2100; /* höher als Video */
+
+    border: 5px solid rgb(11, 11, 130);
 }
 
+
+#output.transparentOutput {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(11, 11, 130, 0.4);
+
+    background: rgba(255,255,255,0.4);
+    padding: 8px 16px;
+    border-radius: 12px;
+    z-index: 10;
+
+    position: absolute;
+    z-index: 2100; /* höher als Video */
+
+    border: 5px solid rgb(11, 11, 130, 0.4);
+}
 
 
 
@@ -130,12 +153,24 @@ h4 {
 }
 
 
+h5 {
+    font-size: 55px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+    color: rgb(11, 11, 130);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
 
 .page {
     position: relative;     /* Kinder absolut positionieren relativ zu Page */
     width: 1668px;
     height: 2224px;
-    background: rgb(247, 247, 247);
+    background: rgb(246, 246, 246);
 }
 
 
@@ -155,7 +190,9 @@ h4 {
 #page15,
 #page16,
 #page43,
-#page44 {
+#page44,
+#page55,
+#page56 {
     background: rgb(216, 208, 255);
 }
 
@@ -193,9 +230,7 @@ h4 {
 #page36,
 #page37,
 #page53,
-#page54,
-#page55,
-#page56 {
+#page54 {
     background: rgb(11, 11, 130);
 }
 
@@ -242,9 +277,9 @@ h4 {
 /* ICONS KAPITEL*/
 
 .Icon_Smalltalk {
-    width: 1100px;
+    width: 1800px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 100px;            /* vertikal verschieben */
+    top: 50px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
@@ -252,9 +287,9 @@ h4 {
 }
 
 .Icon_Verstaendlichkeit {
-    width: 1100px;
+    width: 1800px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 550px;            /* vertikal verschieben */
+    top: 525px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
@@ -262,9 +297,9 @@ h4 {
 }
 
 .Icon_Vorlieben {
-    width: 1100px;
+    width: 1800px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1000px;            /* vertikal verschieben */
+    top: 975px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
@@ -272,9 +307,9 @@ h4 {
 }
 
 .Icon_Notfall {
-    width: 1100px;
+    width: 1800px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1450px;            /* vertikal verschieben */
+    top: 1425px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
@@ -347,6 +382,53 @@ h4 {
     z-index: 998;
 
 }
+
+
+/* Buttons */
+.Zuruck_An_Den_Anfang {
+    width: 600px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1650px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 999;
+
+}
+
+.Lernlektion_Beenden {
+    width: 600px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1650px;            /* vertikal verschieben */
+    left: 69.5%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 999;
+
+}
+
+.Zuruck_zur_Kapitelubersicht{
+    width: 600px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1650px;            /* vertikal verschieben */
+    left: 31.5%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 999;
+}
+
+.ZwischenOtto{
+    width: 1100px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 200px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 998;
+}
+
+
+
+
 
 
 
