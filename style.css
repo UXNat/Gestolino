@@ -106,6 +106,7 @@ html, body {
 
 /* BLAU Normal*/
 h1 {
+    position: relative;
     font-size: 55px;
     margin-top: 300px;
     margin-bottom: 20px;
@@ -114,6 +115,7 @@ h1 {
     color: rgb(11, 11, 130);
     text-align: center;
     font-family: sans-serif;
+    z-index: 999;
 }
 
 
@@ -179,8 +181,16 @@ h5 {
     font-family: sans-serif;
 }
 
-/* Blau, zwischen kamera und Animation*/
+
+
+
+
+
+
+
+/* Blau, unter Animation*/
 .h7 {
+    position: relative;
     font-size: 80px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
@@ -188,13 +198,15 @@ h5 {
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
+    z-index: 999;
     color: rgb(11, 11, 130);
     text-align: center;
     line-height: 1.2;                      /* wie h1 */
 }
 
-/* Blau, unter Animation*/
+/* Blau, über Kamera Animation*/
 .h8 {
+   
     font-size: 55px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
@@ -211,6 +223,107 @@ h5 {
 
 
 
+/* BEIGE, unter Animation*/
+.h9 {
+
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    z-index: 999;
+    color: rgb(246, 222, 208);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+/* BEIGE, über Kamera*/
+.h10 {
+ 
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: rgb(246, 222, 208);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+
+
+
+
+/* LILA, unter Animation*/
+.h11 {
+ 
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    z-index: 999;
+    color: rgb(216, 208, 255);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+/* LILA, über Kamera*/
+.h12 {
+
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: rgb(216, 208, 255);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+
+
+
+/* ROT, unter Animation*/
+.h13 {
+  
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    z-index: 999;
+    color: rgb(170, 38, 36);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+/* ROT, über Kamera*/
+.h14 {
+
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1300px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: rgb(170, 38, 36);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+
 
 
 
@@ -221,7 +334,7 @@ h5 {
     position: relative;     /* Kinder absolut positionieren relativ zu Page */
     width: 1668px;
     height: 2224px;
-    background: rgb(246, 246, 246);
+    background: rgb(245, 245, 245);
 }
 
 
@@ -321,7 +434,7 @@ h5 {
     top: 350px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
-    z-index: 999;
+    z-index: 995;
 }
 
 
@@ -492,7 +605,7 @@ h5 {
     position: absolute;   
     top: 100px;            
     left: 50%;             
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleX(-1);
     z-index: 995;
 }
 
@@ -502,6 +615,7 @@ h5 {
     position: absolute;   
     top: 100px;            
     left: 50%;             
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleX(-1);
     z-index: 995;
 }
+
