@@ -865,6 +865,45 @@ function startCameraProperly() {
 }
 
 
+
+
+
+const allowedOutputsByPage = {
+        //Kapitel 1 Smalltalk
+    page8:   ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page10:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page12:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page14:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page16:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page44:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page56:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+        //Kapitel 2 Verständlichkeit
+    page19:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page21:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page23:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page25:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page27:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page46:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page48:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page50:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page52:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+        //Kapitel 3 Vorlieben --> Keine Outputs 
+    page29:  ["x"],
+    page31:  ["x"],
+    page33:  ["x"],
+    page35:  ["x"],
+    page37:  ["x"],
+    page54:  ["x"],
+        //Kapitel 4 Notfälle --> keine Outputs
+    page39:  ["x"],
+    page41:  ["x"],
+};
+
+
+// "Ich", "Du"
+
+
+
 // =====================
 // MediaPipe Callback
 // =====================
@@ -900,19 +939,19 @@ hands.onResults((results) => {
         if (detected.left && NoNo(detected.left, motionLeft)) output = "Nicht";
         if (detected.right && NoNo(detected.right, motionRight)) output = "Nicht";
 
-        if (detected.left && Hallo(detected.left, motionLeft)) output = "Hallo!";
-        if (detected.right && Hallo(detected.right, motionRight)) output = "Hallo!";
+        if (detected.left && Hallo(detected.left, motionLeft)) output = "Hallo/Tschüss!";
+        if (detected.right && Hallo(detected.right, motionRight)) output = "Hallo/Tschüss!";
 
         //if (detected.left && Closed(detected.left)) output = "closed erkannt!";
         //if (detected.right && Closed(detected.right)) output = "closed erkannt!";
-        if (detected.left && Verstanden(detected.left)) output = "Verstanden!";
-        if (detected.right && Verstanden(detected.right)) output = "Verstanden!";
+        if (detected.left && Verstanden(detected.left)) output = "Verstehen";
+        if (detected.right && Verstanden(detected.right)) output = "Verstehen";
 
 
         if (detected.left && Ich(detected.left)) output = "Ich";
         if (detected.right && Ich(detected.right)) output = "Ich";
-        if (detected.left && Du(detected.left)) output = "Du";
-        if (detected.right && Du(detected.right)) output = "Du";
+        if (detected.left && Du(detected.left)) output = "Du/Dich/Dir";
+        if (detected.right && Du(detected.right)) output = "Du/Dich/Dir";
 
         //if (detected.left && Danke(detected.left)) output = "Danke erkannt!";
         //if (detected.right && Danke(detected.right)) output = "Danke erkannt!";
@@ -965,6 +1004,18 @@ hands.onResults((results) => {
         }
     }
 
+
+
+    // === OUTPUT auf erlaubte Wörter der Seite begrenzen ===
+if (currentPage && allowedOutputsByPage[currentPage]) {
+    const allowed = allowedOutputsByPage[currentPage];
+
+    if (!allowed.includes(output)) {
+        output = "Nichts erkannt";
+    }
+}
+
+
     // Output anzeigen
     if (outputDiv) {
     // Delay starten
@@ -982,15 +1033,26 @@ hands.onResults((results) => {
 }
 });
 
+
+
+
+
+
 // =====================
 // Page-Switch
 // =====================
+
+
+let currentPage = null;
+
 window.addEventListener("DOMContentLoaded", () => {
+
 
     // =====================
     // Seite anzeigen
     // =====================
     function showPage(id) {
+        currentPage = id;
         document.querySelectorAll(".page").forEach(p => p.style.display = "none");
         document.getElementById(id).style.display = "block";
 
