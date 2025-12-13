@@ -1085,20 +1085,69 @@ if (currentPage && allowedOutputsByPage[currentPage]) {
 // =====================
 
 
+
+
+// =====================
+// Videos sauber starten / stoppen
+// =====================
+function stopAllPageVideos() {
+    document.querySelectorAll(".page video").forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+    });
+}
+
+function playVideosOnPage(pageId) {
+    const page = document.getElementById(pageId);
+    if (!page) return;
+
+    page.querySelectorAll("video").forEach(v => {
+        v.play().catch(() => {});
+    });
+}
+
+
+
+
+
 let currentPage = null;
 
 window.addEventListener("DOMContentLoaded", () => {
-
 
     // =====================
     // Seite anzeigen
     // =====================
     function showPage(id) {
         currentPage = id;
-        document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-        document.getElementById(id).style.display = "block";
 
-        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41", "page44", "page56", "page46", "page48", "page50", "page52", "page54", "page58"]; // Seiten mit Kamera
+        // Alle Seiten ausblenden + Animationen pausieren
+        document.querySelectorAll(".page").forEach(p => {
+            p.style.display = "none";
+            p.classList.remove("active");
+        });
+
+        // Aktive Seite anzeigen
+        const page = document.getElementById(id);
+        page.style.display = "block";
+        page.classList.add("active");
+
+        // =====================
+        // Videos steuern
+        // =====================
+        stopAllPageVideos();
+        playVideosOnPage(id);
+
+        // =====================
+        // Kamera nur auf bestimmten Seiten
+        // =====================
+        const cameraPages = [
+            "page8", "page10", "page12", "page14", "page16",
+            "page19", "page21", "page23", "page25", "page27",
+            "page29", "page31", "page33", "page35", "page37",
+            "page39", "page41", "page44", "page56", "page46",
+            "page48", "page50", "page52", "page54", "page58"
+        ];
+
         const cameraContainer = document.getElementById("cameraContainer");
 
         if (cameraPages.includes(id)) {
@@ -1106,12 +1155,10 @@ window.addEventListener("DOMContentLoaded", () => {
             startCameraProperly();
         } else {
             cameraContainer.style.display = "none";
-            stopCameraProperly();   ////////////////////////NEU///////////////////////
+            stopCameraProperly();   // ✅ wichtig für iPad
         }
 
-
         startInactivityTimer();
-
     }
 
 let inactivityTimer = null;
