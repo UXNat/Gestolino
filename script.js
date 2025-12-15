@@ -1514,7 +1514,12 @@ function startInactivityTimer() {
         //goto17
     document.getElementById("gotoPage17_from58").addEventListener("click", () => showPage("page17"));
 
-
+    document.getElementById("gotoPage59").addEventListener("click", () => showPage("page59"));
+    document.getElementById("gotoPage1_from59_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage3_from59_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage5_from59_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage42_from59_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage4_from59").addEventListener("click", () => showPage("page4"));
 
 
 

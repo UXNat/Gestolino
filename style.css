@@ -188,6 +188,7 @@ h4 {
     color: rgb(170, 38, 36);
     text-align: center;
     font-family: sans-serif;
+    
 }
 
 /* ZWISCHENOTTO Blau (weiter oben)*/
@@ -382,6 +383,82 @@ h5 {
 }
 
 
+.h17 {
+
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(9, 9, 118);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+.h18 {
+
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(170, 38, 36);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+
+/* PAGES x/y */
+.h19 {
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(170, 38, 36);
+    text-align: center;
+    line-height: 1.2;  
+    top: 130px; 
+    left: 48%;
+    z-index: 9999;
+                      
+}
+
+.h20 {
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(9, 9, 118);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+    top: 130px; 
+    left: 48%;
+    z-index: 9999;
+}
+
+.h21 {
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(216, 208, 255);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+    top: 130px; 
+    left: 48%;
+    z-index: 9999;
+}
+
+.h22 {
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    color: rgb(246, 222, 208);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+    top: 130px; 
+    left: 48%;
+    z-index: 9999;
+}
+
+
 
 
 
@@ -415,7 +492,8 @@ h5 {
 #page43,
 #page44,
 #page55,
-#page56 {
+#page56,
+#page59 {
     background: rgb(216, 208, 255);
 }
 
@@ -476,7 +554,7 @@ h5 {
 .icon_pfeil_back {
     width: 200px;
     position: absolute;
-    top: 62px;
+    top: 65px;
     left: 100px;
     cursor: pointer;
     z-index: 999;
@@ -485,7 +563,7 @@ h5 {
 .icon_pfeil_vor {
     width: 200px;
     position: absolute;
-    top: 58px;
+    top: 55px;
     right: 100px;
     cursor: pointer;
     z-index: 999;
@@ -667,21 +745,21 @@ h5 {
 
 
 .videoGross {
-    width: 1500px;
+    width: 1400px;
     position: absolute;   
-    top: 100px;            
-    left: 50%;             
-    transform: translateX(-50%) scaleX(-1);
+    top: 200px;            
+    left: 49%;             
+    transform: translateX(-47%) scaleX(-1);
     z-index: 995;
     object-fit: cover;
 }
 
 .videoGrossGABRIEL {
-    width: 1450px;
+    width: 1350px;
     position: absolute;   
-    top: 100px;            
-    left: 50%;             
-    transform: translateX(-50%) scaleX(-1);
+    top: 200px;            
+    left: 49%;             
+    transform: translateX(-47%) scaleX(-1);
     z-index: 995;
     object-fit: cover;
 }
@@ -689,21 +767,21 @@ h5 {
 
 
 .videoKlein {
-    width: 790px;
+    width: 690px;
     position: absolute;   
-    top: 75px;            
-    left: 50%;             
-    transform: translateX(-50%) scaleX(-1);
+    top: 175px;            
+    left: 49%;             
+    transform: translateX(-47%) scaleX(-1);
     z-index: 995;
     object-fit: cover;
 }
 
 .videoKleinGABRIEL {
-    width: 760px;
+    width: 660px;
     position: absolute;   
-    top: 75px;            
-    left: 50%;             
-    transform: translateX(-50%) scaleX(-1);
+    top: 200px;            
+    left: 49%;             
+    transform: translateX(-47%) scaleX(-1);
     z-index: 995;
     object-fit: cover;
 }
@@ -737,7 +815,7 @@ h5 {
     top: 700px;            /* vertikal verschieben */
     left: 82%;             /* horizontal zentriert */
     transform: translateX(-50%);
-    z-index: 2500;
+    z-index: 9999;
     object-fit: cover;
 }
 
@@ -745,10 +823,29 @@ h5 {
 .Sticker {
     width: 1050px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1000px;            /* vertikal verschieben */
+    top: 1250px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     z-index: 990;
     object-fit: cover;
 }
 
+.Verbot_H {
+    width: 400px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1450px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 990;
+    object-fit: cover;
+}
+
+.EndGabriel {
+    width: 1000px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 580px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 995;
+    object-fit: cover;
+}
