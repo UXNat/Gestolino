@@ -1134,6 +1134,20 @@ let currentPage = null;
 
 window.addEventListener("DOMContentLoaded", () => {
 
+
+
+    const lockBtn = document.getElementById("lockInteractionBtn");
+
+    if (lockBtn) {
+        lockBtn.addEventListener("click", () => {
+            document.body.classList.add("no-touch");
+
+    
+        });
+    }
+
+
+
     // =====================
     // Seite anzeigen
     // =====================

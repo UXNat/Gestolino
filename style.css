@@ -25,11 +25,16 @@ html, body {
     overflow: hidden;
     
     /* NO SCROLLING/ ZOOMING */
-    touch-action: none;
+    /*touch-action: none; */
     /* -ms-touch-action: none; */
 
 }
 
+/* Interaktion gesperrt */
+body.no-touch {
+    touch-action: none;
+    overscroll-behavior: none;
+}
 
 
 
@@ -862,13 +867,25 @@ h5 {
 .Otto_Schild {
     width: 250px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 800px;            /* vertikal verschieben */
-    left: 60%;             /* horizontal zentriert */
+    top: 890px;            /* vertikal verschieben */
+    left: 87%;             /* horizontal zentriert */
     transform: translateX(-50%);
     z-index: 9999;
     object-fit: cover;
 
+
+    opacity: 0.4;
+
     pointer-events: none;
 }
 
+.NoNoScroll {
 
+    width: 200px;
+    position: absolute;
+    top: 65px;
+    left: 100px;
+    cursor: pointer;
+    z-index: 999;
+
+}
