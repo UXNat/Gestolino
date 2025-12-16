@@ -18,12 +18,18 @@ html, body {
     background: #eeeeee;
     font-family: sans-serif;
 
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 
+
+    position: relative;
+
+    overflow: hidden;
     
+    /* NO SCROLLING/ ZOOMING */
+    touch-action: none;
+    /* -ms-touch-action: none; */
+
 }
+
 
 
 
@@ -50,7 +56,7 @@ video {
 
     margin-top: 6%;
 
-
+    pointer-events: none;
 
     
 }
@@ -120,9 +126,6 @@ video {
 
     border: 5px solid rgb(11, 11, 130, 0.4);
 }
-
-
-
 
 
 
@@ -815,17 +818,6 @@ h5 {
 }
 
 
-.Otto_Schild {
-    width: 350px;
-    position: absolute;    /* absolut innerhalb der Page */
-    top: 700px;            /* vertikal verschieben */
-    left: 82%;             /* horizontal zentriert */
-    transform: translateX(-50%);
-    z-index: 9999;
-    object-fit: cover;
-}
-
-
 .Sticker {
     width: 1050px;
     position: absolute;    /* absolut innerhalb der Page */
@@ -864,6 +856,19 @@ h5 {
     transform: translateX(-50%);
     z-index: 990;
     object-fit: cover;
+}
+
+
+.Otto_Schild {
+    width: 250px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 800px;            /* vertikal verschieben */
+    left: 60%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 9999;
+    object-fit: cover;
+
+    pointer-events: none;
 }
 
 

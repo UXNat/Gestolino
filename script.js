@@ -1127,6 +1127,11 @@ function playVideosOnPage(pageId) {
 
 let currentPage = null;
 
+
+
+
+
+
 window.addEventListener("DOMContentLoaded", () => {
 
     // =====================
@@ -1176,9 +1181,12 @@ window.addEventListener("DOMContentLoaded", () => {
             startCameraProperly();
         } else {
             cameraContainer.style.display = "none";
-            stopCameraProperly();   // ✅ wichtig für iPad
+            stopCameraProperly();  
         }
 
+
+
+        
         startInactivityTimer();
     }
 
