@@ -394,7 +394,7 @@ h5 {
     font-size: 55px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
-    color: rgb(9, 9, 118);
+    color: rgb(6, 6, 96);
     text-align: center;
     line-height: 1.2;                      /* wie h1 */
 }
@@ -857,7 +857,7 @@ h5 {
 }
 
 .Karte {
-    width: 300px;
+    width: 750px;
     position: absolute;    /* absolut innerhalb der Page */
     top: 1400px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
