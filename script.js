@@ -675,7 +675,7 @@ function Danke_ZMovement(hand, state = DankeState) {
 }
 
 
-
+///////////////////////////////////////////////////////////////////////////////////
 
 function Danke(hand) {
     if (!hand) return false;
